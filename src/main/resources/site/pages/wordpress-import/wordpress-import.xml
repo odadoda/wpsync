@@ -1,0 +1,27 @@
+<page>
+  <display-name>Wordpress import</display-name>
+  <config>
+    <!-- 
+        <input name="name" type="type-name">
+          <label>Some label</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        
+    -->
+
+        <input name="wordpressEndPoint" type="TextLine">
+          <label>Wordpress site json endpoint</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+  </config>
+  <regions>
+    <region name="top"/>
+    <region name="bottom"/>
+  </regions>
+</page>

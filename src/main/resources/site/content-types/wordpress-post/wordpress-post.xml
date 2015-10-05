@@ -1,0 +1,122 @@
+<content-type>
+  <display-name>Wordpress post</display-name>
+  <content-display-name-script>$('firstName', ' ', 'lastName')</content-display-name-script>
+  <super-type>base:structured</super-type>
+  <is-abstract>false</is-abstract>
+  <is-final>true</is-final>
+  <allow-child-content>true</allow-child-content>
+  <form>
+      <field-set name="content">
+          <label>Content</label>
+          
+          <input name="title" type="TextLine">
+              <label>Header</label>
+              <occurrences minimum="0" maximum="1"/>
+              <config/>
+            </input>
+            <input name="slug" type="TextLine">
+              <label>Slug</label>
+              <occurrences minimum="0" maximum="1"/>
+              <config/>
+            </input>
+            <input name="content" type="HtmlArea">
+              <label>Content</label>
+              <occurrences minimum="0" maximum="1"/>
+              <config/>
+            </input>
+            <input name="excerpt" type="HtmlArea">
+              <label>Content</label>
+              <occurrences minimum="0" maximum="1"/>
+              <config/>
+            </input>
+            <input name="featuredimage" type="TextLine">
+              <label>Feature Image</label>
+              <occurrences minimum="0" maximum="1"/>
+              <config/>
+            </input>
+      </field-set>
+    <field-set name="meta">
+        
+        <label>Meta</label>
+        <input name="id" type="Long">
+          <label>Comment status</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="date" type="DateTime">
+          <label>Date</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="dategmt" type="DateTime">
+          <label>Date GMT</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="datetz" type="TextLine">
+          <label>Date tz</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="modified" type="TextLine">
+          <label>Modified</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="modifiedgmt" type="TextLine">
+          <label>Modified GMT</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="guid" type="TextLine">
+          <label>Guid</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="link" type="TextLine">
+          <label>Link</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="comment_status" type="TextLine">
+          <label>Comment status</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        
+        
+        <input name="format" type="TextLine">
+          <label>Format<label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        
+        <input name="menuorder" type="TextLine">
+          <label>Menuorder</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        
+        <input name="parent" type="TextLine">
+          <label>Parent</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+            <input name="pingstatus" type="TextLine">
+          <label>Pingstatus</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+        <input name="sticky" type="TextLine">
+          <label>Sticky</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config/>
+        </input>
+            
+    </field-set>
+    
+    
+
+
+
+  </form>
