@@ -85,6 +85,8 @@ function putPost(wordpresspostid){
         displayName: wordpressPost.title,
         requireValid: true,
         contentType: app.name + ':wordpresspost',
+        branch: "draft",
+        
         data: {
                 title: wordpressPost.title,
                 content: wordpressPost.content,
