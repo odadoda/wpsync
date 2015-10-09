@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>Wordpress sync</title>
+        <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css"/>
+        <script data-th-src="${portal.assetUrl({'_path=js/jquery.js'})}" />
+        <script data-th-src="${portal.assetUrl({'_path=js/main.js'})}" />
     </head>
     <body>
         <div>
@@ -20,7 +23,7 @@
             </thead>
             <tbody>
                 
-                <tr data-th-each="post : ${wordpressposts}">
+                <tr data-th-each="post : ${wordpressposts}" data-th-attr="class=${post.isImported ? 'imported' : 'notImported'}">
                     <td data-th-text="${post.ID}"></td>
                     <td data-th-text="${post.title}"></td>
                     <td data-th-text="${portal.processHtml({'_value=' + post.excerpt})}"></td>
@@ -28,7 +31,9 @@
                     <td>
                         <form data-th-action="${putUrl}" action="#" method="post">
                             <input type="hidden" name="wordpressid" data-th-attr="value=${post.ID}" />
-                            <button class="js_import" name="action" value="put">import</button>
+                            <span data-th-if="post.isImported != 'true'">
+                            <button class="js_import" name="action" value="put" >import</button>
+                            </span>
                         </form>
                     </td> 
                 </tr>

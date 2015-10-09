@@ -1,10 +1,17 @@
 $(function(){
 
-    $('.js_import').click(function(){
+    $('.js_import').click(function(event){
+        event.preventDefault();
         var form = $(this).parent('form');
         var url = form.attr('action');
-        $.post(url, form.serialize()).done(function(result){
-            console.log('somethings done' + result);
+        var wordpresspostid = $(this).siblings('input[name="wordpressid"]').val();
+        var action = $(this).val();
+        $.post(url, {wordpressid: wordpresspostid, action: action}).done(function(result){
+            var parentRow = form.parents('tr');
+            parentRow.css('color', 'skyblue');
+        }).error(function(){
+            var parentRow = form.parents('tr');
+            parentRow.css('color', 'red');
         });
     });
     
