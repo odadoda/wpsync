@@ -1,15 +1,15 @@
 <content-type>
-  <display-name>Wordpress post</display-name>
-  <content-display-name-script>$('id', ' ', 'title')</content-display-name-script>
-  <super-type>base:structured</super-type>
-  <is-abstract>false</is-abstract>
-  <is-final>true</is-final>
-  <allow-child-content>true</allow-child-content>
-  <form>
-      <field-set name="content">
-          <label>Content</label>
-          
-          <input name="title" type="TextLine">
+    <display-name>Wordpress post</display-name>
+    <content-display-name-script>$('id', ' ', 'title')</content-display-name-script>
+    <super-type>base:structured</super-type>
+    <is-abstract>false</is-abstract>
+    <is-final>true</is-final>
+    <allow-child-content>true</allow-child-content>
+    <form>
+    <field-set name="maincontent">
+        <label>Content</label>
+        <items>
+            <input name="title" type="TextLine">
               <label>Header</label>
               <occurrences minimum="0" maximum="1"/>
               <config/>
@@ -34,10 +34,11 @@
               <occurrences minimum="0" maximum="1"/>
               <config/>
             </input>
-      </field-set>
+        </items>
+    </field-set>
     <field-set name="meta">
-        
         <label>Meta</label>
+        <items>
         <input name="id" type="Long">
           <label>Comment status</label>
           <occurrences minimum="0" maximum="1"/>
@@ -112,7 +113,7 @@
           <occurrences minimum="0" maximum="1"/>
           <config/>
         </input>
-            
+        </items>
     </field-set>
   </form>
 </content-type>

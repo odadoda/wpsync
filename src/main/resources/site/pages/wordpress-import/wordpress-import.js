@@ -11,6 +11,10 @@ var libs = {
 
 
 exports.get = function(req){
+    var testContent = libs.content.get({ key : '/wpimport/wordpressimport/sdfwefasfds'});
+    libs.util.log('-- pewpew --');
+    libs.util.log( testContent );
+    
     libs.util.log("~~ get ~~");
     var content = libs.portal.getContent();
     
@@ -82,15 +86,19 @@ function putPost(wordpresspostid){
         requireValid: true,
         contentType: app.name + ':wordpresspost',
         data: {
-            title: wordpressPost.title,
-            id: wordpressPost.ID,
-            content: wordpressPost.content,
-            date: wordpressPost.date,
-            modified: wordpressPost.modified,
+                title: wordpressPost.title,
+                content: wordpressPost.content,
+            
+                id: wordpressPost.ID,
+                date: wordpressPost.date,
+                modified: wordpressPost.modified,
+            
         }
         
         
     });
+
+    libs.util.log(returnJson);
 
     return returnJson;
     
