@@ -1,6 +1,6 @@
 <content-type>
   <display-name>Wordpress post</display-name>
-  <content-display-name-script>$('firstName', ' ', 'lastName')</content-display-name-script>
+  <content-display-name-script>$('id', ' ', 'title')</content-display-name-script>
   <super-type>base:structured</super-type>
   <is-abstract>false</is-abstract>
   <is-final>true</is-final>
@@ -86,7 +86,7 @@
         
         
         <input name="format" type="TextLine">
-          <label>Format<label>
+          <label>Format</label>
           <occurrences minimum="0" maximum="1"/>
           <config/>
         </input>
@@ -114,9 +114,5 @@
         </input>
             
     </field-set>
-    
-    
-
-
-
   </form>
+</content-type>

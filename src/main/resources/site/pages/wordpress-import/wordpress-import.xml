@@ -19,6 +19,14 @@
           <occurrences minimum="0" maximum="1"/>
           <config/>
         </input>
+        <input name="targetDirectory" type="ContentSelector">
+          <label>Target directory</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config>
+            <relationship-type>system:reference</relationship-type>
+            <allow-content-type>base:folder</allow-content-type>
+          </config>
+        </input>
   </config>
   <regions>
     <region name="top"/>

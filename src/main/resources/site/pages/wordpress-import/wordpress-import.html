@@ -7,5 +7,35 @@
             <h1 data-th-text="${title}">pewpew import</h1>
             <p data-th-text="${status}">status incoming</p>
         </div>
+        
+        <table>
+            <thead>
+                <tr>
+                <td>id</td>
+                <td>title</td>
+                <td>preface</td>
+                <td>published date</td>
+                <td>actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr data-th-each="post : ${wordpressposts}">
+                    <td data-th-text="${post.ID}"></td>
+                    <td data-th-text="${post.title}"></td>
+                    <td data-th-text="${portal.processHtml({'_value=' + post.excerpt})}"></td>
+                    <td data-th-text="${post.date}"></td>
+                    <td>
+                        <form data-th-action="${putUrl}" action="#" method="post">
+                            <input type="hidden" name="wordpressid" data-th-attr="value=${post.ID}" />
+                        <button class="js_import" name="action" value="put">import</button>
+                        </form>
+                    </td> 
+                </tr>
+                
+            </tbody>            
+        </table>
+        
+        
     </body>
 </html>

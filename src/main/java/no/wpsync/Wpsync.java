@@ -5,12 +5,26 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.enonic.xp.content.ContentService;
+import com.enonic.xp.content.CreateContentParams;
+import com.enonic.xp.lib.content.CreateContentHandler;
+import com.enonic.xp.script.bean.BeanContext;
+import com.enonic.xp.script.bean.ScriptBean;
+
+
 /**
  * Created by oda on 02.10.2015.
  */
 
-public class Wpsync {
+public class Wpsync implements ScriptBean{
 
+
+    private ContentService cs;
+
+    @Override
+    public void initialize(BeanContext context) {
+        cs = context.getService(ContentService.class).get();
+    }
 
     private String urlEndpoint;
 
@@ -29,11 +43,33 @@ public class Wpsync {
             e.printStackTrace();
         }
 
-        System.out.println(result);
+        return result;
+    }
+
+
+
+
+    public String getPost(String urlEndpoint, String id){
+
+        String getPostUri = "/posts/" + id;
+
+        String restApiUrl = urlEndpoint + getPostUri;
+        System.out.println(restApiUrl);
+        String result;
+
+        try {
+            result = HttpConnection.sendGetRequest(restApiUrl);
+        }catch (Exception e){
+            e.printStackTrace();
+            result = "{error: Error: could not get post from "+ urlEndpoint +": " + urlEndpoint + "}";
+        }
 
         return result;
     }
+
 }
+
+
 
 
 

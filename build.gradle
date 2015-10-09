@@ -38,6 +38,7 @@ dependencies {
     include "com.enonic.xp:lib-mustache:${xpVersion}"
     include "com.enonic.xp:lib-i18n:${xpVersion}"
     include 'com.enonic.lib:util:1.0.0'
+    compile 'org.json:json:20150729'
 }
 
 repositories {
@@ -47,3 +48,7 @@ repositories {
         url 'http://repo.enonic.com/public'
     }
 }
+
+apply plugin: 'java'
+
+dependencies
