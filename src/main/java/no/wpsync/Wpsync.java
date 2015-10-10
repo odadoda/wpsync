@@ -34,9 +34,10 @@ public class Wpsync implements ScriptBean{
 
     public String getAllPosts(String urlEndpoint){
 
-        String getPostsRestUri = "/posts";
+        String getPostsRestUri = "/posts?filter[posts_per_page]=800";
         String restApiUrl = urlEndpoint + getPostsRestUri;
         String result = "";
+        System.out.println(restApiUrl);
         try {
             result = HttpConnection.sendGetRequest(restApiUrl);
         } catch (Exception e) {

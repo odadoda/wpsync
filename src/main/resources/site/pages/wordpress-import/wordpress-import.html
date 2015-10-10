@@ -31,9 +31,8 @@
                     <td>
                         <form data-th-action="${putUrl}" action="#" method="post">
                             <input type="hidden" name="wordpressid" data-th-attr="value=${post.ID}" />
-                            <span data-th-if="post.isImported != 'true'">
                             <button class="js_import" name="action" value="put" >import</button>
-                            </span>
+                            
                         </form>
                     </td> 
                 </tr>

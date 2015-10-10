@@ -6,6 +6,7 @@
     <is-final>true</is-final>
     <allow-child-content>true</allow-child-content>
     <form>
+        
     <field-set name="maincontent">
         <label>Content</label>
         <items>
@@ -25,7 +26,7 @@
               <config/>
             </input>
             <input name="excerpt" type="HtmlArea">
-              <label>Content</label>
+              <label>Excerpt</label>
               <occurrences minimum="0" maximum="1"/>
               <config/>
             </input>
@@ -34,8 +35,19 @@
               <occurrences minimum="0" maximum="1"/>
               <config/>
             </input>
+            <input name="tags" type="Tag">
+                <label>Tags</label>
+                <occurrences minimum="0" maximum="0"/>
+                <config/>
+            </input>
+            <input name="category" type="Tag">
+                <label>Category</label>
+                <occurrences minimum="0" maximum="0"/>
+                <config/>
+            </input>
         </items>
     </field-set>
+    
     <field-set name="meta">
         <label>Meta</label>
         <items>
@@ -115,5 +127,17 @@
         </input>
         </items>
     </field-set>
+    
+    <field-set name="raw">
+        <label>Raw</label>
+        <items>
+            <input name="unprocessed" type="TextArea">
+                <label>Unprocessed</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config/>
+            </input>    
+        </items>
+    </field-set>
+    
   </form>
 </content-type>

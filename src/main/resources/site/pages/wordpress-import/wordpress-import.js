@@ -32,12 +32,8 @@ exports.get = function(req){
         count: 1000
     });
     
-    libs.util.log(alreadyImportedContent);
-    
-    
     
     for(var i = 0; i < wordpressPosts.length; i++){
-        libs.util.log(wordpressPosts[i]['ID']);
         for(var k = 0; k < alreadyImportedContent.hits.length; k++){
             if(alreadyImportedContent.hits[k].data.id == wordpressPosts[i]['ID']){
                 wordpressPosts[i].isImported = true;
@@ -102,7 +98,21 @@ function putPost(wordpresspostid){
         target = directory._path
     }
     
-
+    
+    var tags = Array();
+    if(typeof(wordpressPost.terms.post_tag) != 'undefined'){
+        for(var i = 0; i < wordpressPost.terms.post_tag.length; i++){
+            tags.push(wordpressPost.terms.post_tag[i].name);
+        }
+    }
+    
+    var category = Array();
+    if(typeof(wordpressPost.terms.category) != 'undefined'){
+        for(var i = 0; i < wordpressPost.terms.category.length; i++){
+            category.push(wordpressPost.terms.category[i].name);
+        }    
+    }
+    
     var returnJson = libs.content.create({
         name: wordpressPost.slug,
         parentPath: target,
@@ -113,16 +123,32 @@ function putPost(wordpresspostid){
         
         data: {
             title: wordpressPost.title,
+            slug: wordpressPost.slug,
             content: wordpressPost.content,
+            excerpt: wordpressPost.excerpt,
+            featuredimage: wordpressPost.featured_image,
+            tags: tags,
+            category: category,
             id: wordpressPost.ID,
             date: wordpressPost.date,
+            dategmt: wordpressPost.date_gmt,
+            datetz: wordpressPost.date_tz,
             modified: wordpressPost.modified,
+            modifiedgmt: wordpressPost.modified_gmt,
+            guid: wordpressPost.guid,
+            link: wordpressPost.link,
+            comment_status: wordpressPost.comment_status,
+            format: wordpressPost.format,
+            menuorder: wordpressPost.menu_order,
+            parent: wordpressPost.parent,
+            pingstatus: wordpressPost.ping_status,
+            sticky: wordpressPost.sticky,
+            unprocessed:  JSON.stringify( wordpressPost )
         }
         
         
     });
 
-    libs.util.log(returnJson);
 
     return returnJson;
     
