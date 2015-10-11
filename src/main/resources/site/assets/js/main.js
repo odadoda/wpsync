@@ -10,6 +10,7 @@ $(function(){
         $.post(url, {wordpressid: wordpressid, action: action}).done(function(result){
             var parentRow = form.parents('tr');
             parentRow.css('color', 'skyblue');
+            form.hide();
         }).error(function(){
             var parentRow = form.parents('tr');
             parentRow.css('color', 'red');
